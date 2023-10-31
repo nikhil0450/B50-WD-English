@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">DOM Tutorial</h1>
+    <p id="demo"></p>
+    <p class="demo"></p>
+    <p></p>
+    <div id="image"></div>
+
+    <script src="./1.js">
+        // here the js code go  
+
+        // Using ID 
+        // var element = document.getElementById("demo");
+        // element.innerHTML="This paragraph is added by Javascript using ID";
+
+        // var element2 = document.getElementById("heading");
+        // element2.innerHTML +=" (Document Object Model)";
+
+        // Using ClassName 
+        // var element3 = document.getElementsByClassName("demo");
+        // var para = element3[0];
+        // para.innerHTML="this paragraph is added by Javascript using class"
+        // console.log(element3);
+
+
+
+        // Using tags
+        // var element4 = document.getElementsByTagName("p")[1];
+        // console.log(element4)
+        // element4.innerHTML="this is a 2nd paragraph tag using tag ";
+        // element4.style.color="red"
+
+
+        // var element5 = document.getElementsByTagName("body")[0];
+        // element5.style.backgroundColor="blue";
+
+
+        // direct 
+        // document.body.style.backgroundColor="yellowgreen"
+
+        // practice
+        // var element6 = document.getElementById("demo");
+        // element6.innerHTML="This is my first paragraph targeted by ID...";
+        // element6.style.backgroundColor="pink"
+        // element6.style.height="400px";
+        
+        // query 
+        // var ele = document.querySelectorAll("p")[1];
+        // ele.innerHTML="Hello";
+        
+        // var ele1 = document.querySelectorAll("p");
+        // console.log(ele1);  
+
+
+        // var element = document.querySelectorAll("p");
+        // for(let i =0 ; i<element.length ; i++){
+        //     if( element[i].id=="" && element[i].className=="" ){
+        //         console.log(element[i]);
+        //         element[i].innerHTML="This is the paragraph tag with no ID & Class"
+        //     }
+        // }
+
+        // var element1 = document.querySelectorAll("p");
+        // for(let i = 0; i<element1.length; i++){
+        //     element1[i].innerHTML="This is the text added by QuerySelectorAll in every p tag";
+        // }
+        
+
+        // Create, value, appendchild 
+
+        // var para = document.createElement("p");
+        // para.innerHTML="This is the new tag & element created & displayed ";
+        // console.log(para)
+        // document.body.appendChild(para);
+
+        // document.body.append("ABCD")
+
+        // var image = document.createElement("img");
+        // image.setAttribute("src","https://www.sportsadda.com/static-assets/waf-images/28/af/fc/16-9/nWA9qdC9pF.jpg?v=1.3&w=420%20420w");
+        // document.body.append(image);
+        
+
+
+    </script>   
+</body>
+</html>

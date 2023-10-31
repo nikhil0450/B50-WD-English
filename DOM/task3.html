@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dice Game</title>
+    <style>body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f5f5f5;
+    }
+    
+    .game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .player {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .roll-btn {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .roll-btn:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+    
+    .reset-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .reset-btn:hover, .roll-btn:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    <h2>Lets play Dice Game</h2>
+    <div class="game-container">
+        <div class="player player-1">
+            <span class="player-name">Player 1</span>
+            <span class="player-score">0</span>
+            <button class="roll-btn">Roll Dice</button>
+        </div>
+        <div class="player player-2">
+            <span class="player-name">Player 2</span>
+            <span class="player-score">0</span>
+            <button class="roll-btn">Roll Dice</button>
+        </div>
+        <button class="reset-btn">Reset Game</button>
+    </div>
+    <script>
+        const player1 = {
+    score: 0,
+    element: document.querySelector('.player-1'),
+    scoreDisplay: document.querySelector('.player-1 .player-score'),
+    rollBtn: document.querySelector('.player-1 .roll-btn')
+};
+
+const player2 = {
+    score: 0,
+    element: document.querySelector('.player-2'),
+    scoreDisplay: document.querySelector('.player-2 .player-score'),
+    rollBtn: document.querySelector('.player-2 .roll-btn')
+};
+
+const resetButton = document.querySelector('.reset-btn');
+
+let currentPlayer = Math.random() < 0.5 ? player1 : player2;
+
+function switchPlayer() {
+    player1.rollBtn.disabled = !player1.rollBtn.disabled;
+    player2.rollBtn.disabled = !player2.rollBtn.disabled;
+    currentPlayer = currentPlayer === player1 ? player2 : player1;
+}
+
+function rollDice() {
+    if (currentPlayer.rollBtn.disabled) return;
+
+    const diceValue = Math.floor(Math.random() * 6) + 1;
+    currentPlayer.score += diceValue;
+    currentPlayer.scoreDisplay.textContent = currentPlayer.score;
+
+    if (currentPlayer.score >= 30) {
+        currentPlayer.rollBtn.disabled = true;
+        alert(`${currentPlayer === player1 ? 'Player 1' : 'Player 2'} wins!`);
+    } else {
+        switchPlayer();
+    }
+}
+
+function resetGame() {
+    player1.score = 0;
+    player2.score = 0;
+    player1.scoreDisplay.textContent = '0';
+    player2.scoreDisplay.textContent = '0';
+    player1.rollBtn.disabled = false;
+    player2.rollBtn.disabled = false;
+    currentPlayer = Math.random() < 0.5 ? player1 : player2;
+}
+
+player1.rollBtn.addEventListener('click', rollDice);
+player2.rollBtn.addEventListener('click', rollDice);
+resetButton.addEventListener('click', resetGame);
+
+// Initial setup
+currentPlayer.rollBtn.disabled = false;
+
+    </script>
+</body>
+</html>

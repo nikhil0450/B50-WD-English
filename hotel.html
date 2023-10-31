@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+    <style>
+        ul {
+        position: sticky;
+        top: 0;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        z-index: 1;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 163px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+
+      .img{
+          position: relative;
+          display: inline;
+        }
+        .img img{
+            /* width: auto; */
+            width: 100%;
+            height: 600px;
+            
+        }
+        .welcome h1{
+            position: absolute;
+            top: 80px;
+            left: 600px;
+
+            display: inline;
+      }
+        .welcome p, .btn{
+            position: absolute;
+            top: 180px;
+            left: 450px;
+
+            display: inline;
+      }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+
+      <div class="first">
+        <div class="img">
+            <img src="https://thumbs.dreamstime.com/b/hotel-rooms-8146308.jpg" alt="hotel">
+        </div>
+        <div class="welcome">
+            <h1>Welcome to Hotel Vegas</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit unde ullam beatae numquam architecto voluptate.</p> <br>
+            <div class="btn"><button>Explore more</button></div>
+        </div>
+      </div>
+</body>
+</html>
